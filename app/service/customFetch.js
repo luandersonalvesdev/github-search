@@ -7,7 +7,7 @@ export const fetchUser = async (username) => {
     const data = await response.json();
     return data;
   }
-  return ({ ok: false });
+  return ({ notFound: true });
 };
 
 export const fetchRepo = async (username) => {
@@ -16,5 +16,5 @@ export const fetchRepo = async (username) => {
     const data = await response.json();
     return data;
   }
-  return ({ ok: false });
+  return ({ notFound: true });
 };

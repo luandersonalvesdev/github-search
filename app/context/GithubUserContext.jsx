@@ -7,14 +7,14 @@ const GithubUserContext = createContext();
 
 const initialProfileState = {
   login: '',
-  avatar_url: '',
+  avatarUrl: '',
   name: '',
   location: '',
   bio: '',
-  public_repos: 0,
+  publicRepos: 0,
   followers: 0,
   following: 0,
-  created_at: 0,
+  createdAt: 0,
 };
 
 export function GithubUserContextProvider({ children }) {

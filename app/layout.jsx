@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { GithubUserContextProvider } from './context/GithubUserContext';
+import { CurrentSearchContextProvider } from './context/CurrentSearchContext';
 
 export const metadata = {
   title: 'Github Search',
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <GithubUserContextProvider>
-          {children}
+          <CurrentSearchContextProvider>
+            {children}
+          </CurrentSearchContextProvider>
         </GithubUserContextProvider>
       </body>
     </html>
