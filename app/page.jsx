@@ -1,11 +1,11 @@
-import LoginScreenProfile from './components/LoginScreenProfile';
-import UserFinder from './components/UserFinder';
+import LoginScreenUser from './components/LoginScreenUser';
+import ProfileFinder from './components/ProfileFinder';
 
 export default function Home() {
   return (
     <main>
-      <LoginScreenProfile />
-      <UserFinder goal="user" />
+      <LoginScreenUser />
+      <ProfileFinder goal="user" />
     </main>
   );
 }

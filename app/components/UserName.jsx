@@ -3,6 +3,6 @@
 import { useGithubUserContext } from '../context/GithubUserContext';
 
 export default function UsernameProfile() {
-  const { profile: { login } } = useGithubUserContext();
-  return <p>{login.length ? login : '...'}</p>;
+  const { profile: { name } } = useGithubUserContext();
+  return <p>{name.length ? name : '...'}</p>;
 }

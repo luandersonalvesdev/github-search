@@ -5,24 +5,11 @@ export default function ButtonSearch({ handleSet, inputSearch }) {
   const handleSearch = async () => {
     const data = await fetchUser(inputSearch);
     if (data.notFound) {
-      handleSet({ avatarUrl: '', login: '' });
+      handleSet({ avatarUrl: '', name: '' });
       return;
     }
-    const {
-      login, avatar_url: avatarUrl, name, location, bio,
-      public_repos: publicRepos, followers, following, created_at: createdAt,
-    } = data;
-    const searchResult = {
-      login,
-      avatarUrl,
-      name,
-      location,
-      bio,
-      publicRepos,
-      followers,
-      following,
-      createdAt };
-    handleSet(searchResult);
+    const { avatar_url: avatarUrl, name } = data;
+    handleSet({ avatarUrl, name });
   };
   return (
     <button onClick={ handleSearch }>
