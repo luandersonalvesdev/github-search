@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import ProfileFinder from '../components/ProfileFinder';
+import NavBar from '../components/NavBar';
 
 export default function Timeline() {
   const router = useRouter();
@@ -14,9 +15,9 @@ export default function Timeline() {
   }, []);
 
   return (
-    <>
-      <h1>na timeline</h1>
+    <main>
+      <NavBar />
       <ProfileFinder goal="profile" />
-    </>
+    </main>
   );
 }

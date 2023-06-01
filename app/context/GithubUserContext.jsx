@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 
 const GithubUserContext = createContext();
 
+const defaultProfileAvatar = 'https://i.stack.imgur.com/frlIf.png';
+
 const initialProfileState = {
   login: '',
-  avatarUrl: '',
+  avatarUrl: defaultProfileAvatar,
   name: '',
   location: '',
   bio: '',
