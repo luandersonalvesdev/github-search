@@ -7,6 +7,7 @@ import { useCurrentSearch } from '../context/CurrentSearchContext';
 import ButtonSearch from './ButtonSearch';
 import ButtonToLogin from './ButtonToLogin';
 import InputText from './InputText';
+import ProfileCard from './ProfileCard';
 
 export default function UserFinder({ goal }) {
   const [inputSearch, setInputSearch] = useState('');
@@ -21,7 +22,7 @@ export default function UserFinder({ goal }) {
   };
 
   const renderByGoal = () => {
-    const desision = goal === 'user' ? <ButtonToLogin /> : <div>Infos do usuário</div>;
+    const desision = goal === 'user' ? <ButtonToLogin /> : <ProfileCard />;
     return desision;
   };
 
