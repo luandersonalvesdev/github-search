@@ -8,6 +8,7 @@ const CurrentSearchContext = createContext();
 const initialCurrSearchState = {
   avatarUrl: '',
   name: '',
+  login: '',
 };
 
 export function CurrentSearchContextProvider({ children }) {
