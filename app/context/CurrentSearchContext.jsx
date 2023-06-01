@@ -6,15 +6,9 @@ import PropTypes from 'prop-types';
 const CurrentSearchContext = createContext();
 
 const initialCurrSearchState = {
-  login: '',
   avatarUrl: '',
   name: '',
-  location: '',
-  bio: '',
-  publicRepos: 0,
-  followers: 0,
-  following: 0,
-  createdAt: 0,
+  login: '',
 };
 
 export function CurrentSearchContextProvider({ children }) {

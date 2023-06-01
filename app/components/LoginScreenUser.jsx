@@ -1,14 +1,14 @@
-import ProfileAvatar from './ProfileAvatar';
-import UsernameProfile from './UsernameProfile';
+import UserAvatar from './UserAvatar';
+import UserName from './UserName';
 
 export default function LoginScreenProfile() {
   return (
     <div>
-      <ProfileAvatar
+      <UserAvatar
         width="100px"
         height="100px"
       />
-      <UsernameProfile />
+      <UserName />
     </div>
   );
 }
