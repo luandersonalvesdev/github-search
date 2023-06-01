@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import { fetchUser } from '../service/customFetch';
 
+const defaultProfileAvatar = 'https://i.stack.imgur.com/frlIf.png';
+
 export default function ButtonSearch({
   handleSet, inputSearch, setIsSearching, setItFound, setSought,
 }) {
   const notFoundProfile = () => {
-    handleSet({ avatarUrl: '', login: '' });
+    handleSet({ avatarUrl: defaultProfileAvatar, login: '' });
     setItFound(false);
   };
 
