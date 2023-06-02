@@ -24,7 +24,7 @@ export default function ButtonToFavorite({ login }) {
     const getFavorites = JSON.parse(localStorage.getItem('githubSearchFavs'));
     const checkFavorite = getFavorites.some((fav) => fav === login);
     setIsFavorite(checkFavorite);
-  }, []);
+  }, [login]);
 
   return (
     <button
