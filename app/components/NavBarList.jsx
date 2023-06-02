@@ -7,6 +7,9 @@ export default function NavBarList() {
   return (
     <ul>
       <li>
+        <Link href="/">Página inicial</Link>
+      </li>
+      <li>
         <Link href="/favorites">Favoritos</Link>
       </li>
       <li>

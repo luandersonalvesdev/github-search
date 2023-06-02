@@ -14,7 +14,7 @@ export default function Favorites() {
     if (!getUserFromLS) { router.push('/'); }
     const getFavsFromLS = JSON.parse(localStorage.getItem('githubSearchFavs'));
     setFavorites(getFavsFromLS);
-  }, []);
+  }, [router]);
 
   return (
     <main>

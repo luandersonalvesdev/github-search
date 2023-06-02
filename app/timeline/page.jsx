@@ -13,12 +13,15 @@ export default function Timeline() {
     const getFavorites = JSON.parse(localStorage.getItem('githubSearchFavs'));
     if (!getFavorites) { localStorage.setItem('githubSearchFavs', JSON.stringify([])); }
     if (!getUserFromLS) { router.push('/'); }
-  }, []);
+  }, [router]);
 
   return (
     <main>
       <NavBar />
       <ProfileFinder goal="profile" />
+      <section>
+        ficar todos os repos
+      </section>
     </main>
   );
 }
