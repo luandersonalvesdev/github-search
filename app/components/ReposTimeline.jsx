@@ -13,7 +13,10 @@ export default function ReposTimeline() {
 
   useEffect(() => {
     const getFavsFromLS = JSON.parse(localStorage.getItem('githubSearchFavs'));
-    if (!getFavsFromLS) { localStorage.setItem('githubSearchFavs', JSON.stringify([])); }
+    if (!getFavsFromLS) {
+      localStorage.setItem('githubSearchFavs', JSON.stringify([]));
+      return;
+    }
     getFavsFromLS.forEach(async (fav) => {
       const data = await fetchRepo(fav);
       setAllRepos((prevState) => [...prevState, ...data]);
