@@ -3,13 +3,14 @@
 import Link from 'next/link';
 
 export default function NavBarList() {
+  const getUserFromLS = localStorage.getItem('githubSearchUser');
   return (
     <ul>
       <li>
         <Link href="/favorites">Favoritos</Link>
       </li>
       <li>
-        <Link href="/profile">Perfil</Link>
+        <Link href={ `/details/${getUserFromLS}` }>Perfil</Link>
       </li>
     </ul>
   );

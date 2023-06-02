@@ -10,8 +10,9 @@ export default function Timeline() {
 
   useEffect(() => {
     const getUserFromLS = localStorage.getItem('githubSearchUser');
-    // eslint-disable-next-line no-unused-expressions
-    !getUserFromLS && router.push('/');
+    const getFavorites = JSON.parse(localStorage.getItem('githubSearchFavs'));
+    if (!getFavorites) { localStorage.setItem('githubSearchFavs', JSON.stringify([])); }
+    if (!getUserFromLS) { router.push('/'); }
   }, []);
 
   return (
