@@ -43,6 +43,7 @@ export default function UserFinder({ goal }) {
         <InputText
           handleChange={ handleChange }
           inputSearch={ inputSearch }
+          goal={ goal }
         />
         <ButtonSearch
           handleSet={ goal === 'user' ? setProfile : setCurrSearch }

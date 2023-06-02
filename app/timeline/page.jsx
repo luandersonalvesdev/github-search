@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import ProfileFinder from '../components/ProfileFinder';
 import NavBar from '../components/NavBar';
+import ReposTimeline from '../components/ReposTimeline';
 
 export default function Timeline() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Timeline() {
       <NavBar />
       <ProfileFinder goal="profile" />
       <section>
-        ficar todos os repos
+        <ReposTimeline />
       </section>
     </main>
   );

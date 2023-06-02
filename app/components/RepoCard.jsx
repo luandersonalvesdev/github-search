@@ -2,18 +2,23 @@
 
 import PropTypes from 'prop-types';
 
+const TEEN = 10;
+
 export default function RepoCard({
-  name, login, avatarUrl, forks, stargazersCount, createdAt, updatedAt,
+  name, login, avatarUrl, forks, stargazersCount, createdAt, updatedAt, htmlUrl,
 }) {
+  const convertCreated = createdAt.substring(0, TEEN).split('-').reverse().join('/');
+  const convertUpdated = updatedAt.substring(0, TEEN).split('-').reverse().join('/');
   return (
-    <ul>
-      <li>
+    <li>
+      <a href={ htmlUrl } target="_blank" rel="noreferrer">
         <img src={ avatarUrl } alt="" width="25px" />
         <p>{`${login} / ${name}`}</p>
-        <p>{`${createdAt}  ${updatedAt}`}</p>
-        <p>{`${stargazersCount}  ${forks}`}</p>
-      </li>
-    </ul>
+        <p>{`criado: ${convertCreated}`}</p>
+        <p>{`Último update: ${convertUpdated}`}</p>
+        <p>{`Estrelas: ${stargazersCount}  Forks: ${forks}`}</p>
+      </a>
+    </li>
   );
 }
 
@@ -23,6 +28,7 @@ RepoCard.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
+  htmlUrl: PropTypes.string.isRequired,
   stargazersCount: PropTypes.number.isRequired,
   forks: PropTypes.number.isRequired,
 };
