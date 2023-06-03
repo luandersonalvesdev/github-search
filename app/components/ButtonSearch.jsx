@@ -21,8 +21,7 @@ export default function ButtonSearch({
     setSought(false);
     setIsSearching(true);
     const data = await fetchUser(inputSearch);
-    // eslint-disable-next-line no-unused-expressions
-    data.notFound ? notFoundProfile() : foundProfile(data);
+    if (data.notFound) { notFoundProfile(); } else { foundProfile(data); }
     setSought(true);
     setIsSearching(false);
   };

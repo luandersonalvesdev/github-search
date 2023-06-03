@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
 
-export default function InputText({ handleChange, inputSearch }) {
+export default function InputText({ handleChange, inputSearch, goal }) {
   return (
     <input
       type="text"
       name="inputSearch"
       value={ inputSearch }
       onChange={ handleChange }
-      placeholder="Busque seu usuário github"
+      placeholder={
+        goal === 'user'
+          ? 'Busque seu usuário github'
+          : 'Busque um usuário github'
+      }
     />
   );
 }
@@ -15,4 +19,5 @@ export default function InputText({ handleChange, inputSearch }) {
 InputText.propTypes = {
   handleChange: PropTypes.func.isRequired,
   inputSearch: PropTypes.string.isRequired,
+  goal: PropTypes.string.isRequired,
 };
