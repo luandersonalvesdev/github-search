@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { fetchRepo } from '../service/customFetch';
 import RepoCard from './RepoCard';
 
-const MAX_REPO_SHOWN = 5;
+const MAX_REPO_SHOWN = 12;
 const TEEN = 10;
 
 export default function ReposTimeline() {
@@ -66,7 +66,13 @@ export default function ReposTimeline() {
               .filter((repo, ind) => ind < maxRepoShown)
         }
       </ul>
-      <button onClick={ handleLoadMore }>Ver mais</button>
+      <button
+        disabled={ maxRepoShown >= allRepos.length }
+        onClick={ handleLoadMore }
+      >
+        Ver mais
+
+      </button>
     </>
   );
 }
