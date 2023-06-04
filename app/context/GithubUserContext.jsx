@@ -1,15 +1,16 @@
 'use client';
 
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
+import { fetchRepo, fetchUser } from '../service/customFetch';
 
 const GithubUserContext = createContext();
 
-const defaultProfileAvatar = 'https://i.stack.imgur.com/frlIf.png';
+const defaultUserAvatar = 'https://i.stack.imgur.com/frlIf.png';
 
-const initialProfileState = {
+const initialUserState = {
   login: '',
-  avatarUrl: defaultProfileAvatar,
+  avatarUrl: defaultUserAvatar,
   name: '',
   location: '',
   bio: '',
@@ -19,12 +20,25 @@ const initialProfileState = {
   createdAt: 0,
 };
 
+const initialUserReposState = [{}];
+
 export function GithubUserContextProvider({ children }) {
-  const [profile, setProfile] = useState(initialProfileState);
+  const [user, setUser] = useState(initialUserState);
+  const [userRepos, setUserRepos] = useState(initialUserReposState);
+
+  useEffect(() => {
+    (async () => {
+      const userFromLS = localStorage.getItem('githubSearchUser');
+      const dataUser = await fetchUser(userFromLS);
+      const dataRepos = await fetchRepo(userFromLS);
+      setUser(dataUser);
+      setUserRepos(dataRepos);
+    })();
+  }, []);
 
   const values = useMemo(() => ({
-    profile, setProfile,
-  }), [profile, setProfile]);
+    user, setUser, userRepos, setUserRepos,
+  }), [user, userRepos]);
   return (
     <GithubUserContext.Provider value={ values }>
       { children }
