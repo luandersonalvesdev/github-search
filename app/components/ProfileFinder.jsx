@@ -2,7 +2,6 @@
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useGithubUserContext } from '../context/GithubUserContext';
 import { useCurrentSearch } from '../context/CurrentSearchContext';
 import ButtonSearch from './ButtonSearch';
 import ButtonToLogin from './ButtonToLogin';
@@ -11,7 +10,6 @@ import ProfileCard from './ProfileCard';
 
 export default function UserFinder({ goal }) {
   const [inputSearch, setInputSearch] = useState('');
-  const { setProfile } = useGithubUserContext();
   const { setCurrSearch } = useCurrentSearch();
   const [itFound, setItFound] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
@@ -46,7 +44,7 @@ export default function UserFinder({ goal }) {
           goal={ goal }
         />
         <ButtonSearch
-          handleSet={ goal === 'user' ? setProfile : setCurrSearch }
+          handleSet={ setCurrSearch }
           inputSearch={ inputSearch }
           setIsSearching={ setIsSearching }
           setItFound={ setItFound }

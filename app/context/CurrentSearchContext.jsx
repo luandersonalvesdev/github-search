@@ -3,12 +3,14 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
+const defaultUserAvatar = 'https://i.stack.imgur.com/frlIf.png';
+
 const CurrentSearchContext = createContext();
 
-const initialCurrSearchState = {
-  avatarUrl: '',
+export const initialCurrSearchState = {
+  avatarUrl: defaultUserAvatar,
   name: '',
-  login: '',
+  login: '...',
 };
 
 export function CurrentSearchContextProvider({ children }) {

@@ -1,8 +1,8 @@
 'use client';
 
-import { useGithubUserContext } from '../context/GithubUserContext';
+import { useCurrentSearch } from '../context/CurrentSearchContext';
 
 export default function UsernameProfile() {
-  const { profile: { login } } = useGithubUserContext();
-  return <p>{login.length ? login : '...'}</p>;
+  const { currSearch: { login } } = useCurrentSearch();
+  return <p>{login}</p>;
 }
