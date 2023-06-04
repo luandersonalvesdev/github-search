@@ -24,12 +24,6 @@ export function GithubUserContextProvider({ children }) {
   const [user, setUser] = useState(initialUserState);
   const [userRepos, setUserRepos] = useState(initialUserReposState);
 
-  // useEffect(() => {
-  //   (async () => {
-
-  //   })();
-  // }, []);
-
   const successfulLogin = async () => {
     const userFromLS = localStorage.getItem('githubSearchUser');
     if (!userFromLS || userFromLS === '.') { return; }
