@@ -5,7 +5,6 @@ import { useGithubUserContext } from '../context/GithubUserContext';
 
 export default function ProfileDetails({ profile, repos }) {
   const a = useGithubUserContext();
-  console.log(a);
   return (
     <span>profile details</span>
   );
