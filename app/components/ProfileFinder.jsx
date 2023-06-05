@@ -22,7 +22,7 @@ export default function UserFinder({ goal }) {
   const renderByGoal = () => {
     const desision = goal === 'user'
       ? <ButtonToLogin />
-      : <ProfileCard profile={ inputSearch } />;
+      : <ProfileCard />;
     return desision;
   };
 

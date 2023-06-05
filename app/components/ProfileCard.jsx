@@ -1,38 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import ButtonToFavorite from './ButtonToFavorite';
-import { fetchUser } from '../service/customFetch';
+import { useCurrentSearch } from '../context/CurrentSearchContext';
 
-export default function ProfileCard({ profile }) {
-  const [profileCard, setProfileCard] = useState({ login: '' });
-
-  useEffect(() => {
-    (async () => {
-      const { avatar_url: avatarUrl, login, name } = await fetchUser(profile);
-      setProfileCard({ avatarUrl, login, name });
-    })();
-  }, []);
+export default function ProfileCard() {
+  const { currSearch: { avatarUrl, login, name } } = useCurrentSearch();
 
   return (
     <>
-      <Link href={ `/details/${profileCard.login}` }>
+      <Link href={ `/details/${login}` }>
         <img
-          src={ profileCard.avatarUrl }
-          alt={ profileCard.name }
+          src={ avatarUrl }
+          alt={ name }
           width="200px"
           height="200px"
         />
-        <p>{profileCard.name}</p>
-        <p>{profileCard.login}</p>
+        <p>{name}</p>
+        <p>{login}</p>
       </Link>
-      <ButtonToFavorite login={ profileCard.login } />
+      <ButtonToFavorite login={ login } />
     </>
   );
 }
-
-ProfileCard.propTypes = {
-  profile: PropTypes.string.isRequired,
-};
