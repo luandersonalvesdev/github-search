@@ -1,27 +1,23 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { fetchRepo } from '../service/customFetch';
 import RepoCard from './RepoCard';
 
 const MAX_REPO_SHOWN = 12;
 const TEEN = 10;
 
-export default function ReposTimeline() {
+export default function ReposTimeline({ profiles }) {
   const [maxRepoShown, setMaxRepoShown] = useState(MAX_REPO_SHOWN);
   const [allRepos, setAllRepos] = useState([]);
 
   useEffect(() => {
-    const getFavsFromLS = JSON.parse(localStorage.getItem('githubSearchFavs'));
-    if (!getFavsFromLS) {
-      localStorage.setItem('githubSearchFavs', JSON.stringify([]));
-      return;
-    }
-    getFavsFromLS.forEach(async (fav) => {
+    profiles.forEach(async (fav) => {
       const data = await fetchRepo(fav);
       setAllRepos((prevState) => [...prevState, ...data]);
     });
-  }, []);
+  }, [profiles]);
 
   const handleLoadMore = () => { setMaxRepoShown((prev) => prev + MAX_REPO_SHOWN); };
 
@@ -76,3 +72,7 @@ export default function ReposTimeline() {
     </>
   );
 }
+
+ReposTimeline.propTypes = {
+  profiles: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

@@ -1,19 +1,24 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ProfileFinder from '../components/ProfileFinder';
 import NavBar from '../components/NavBar';
 import ReposTimeline from '../components/ReposTimeline';
+import { verifyLogin } from '../helpers/verifyLogin';
 
 export default function Timeline() {
   const router = useRouter();
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const getUserFromLS = localStorage.getItem('githubSearchUser');
+    verifyLogin(router);
     const getFavorites = JSON.parse(localStorage.getItem('githubSearchFavs'));
-    if (!getFavorites) { localStorage.setItem('githubSearchFavs', JSON.stringify([])); }
-    if (!getUserFromLS) { router.push('/'); }
+    if (!getFavorites) {
+      localStorage.setItem('githubSearchFavs', JSON.stringify([]));
+      return;
+    }
+    setFavorites(getFavorites);
   }, [router]);
 
   return (
@@ -21,7 +26,7 @@ export default function Timeline() {
       <NavBar />
       <ProfileFinder goal="profile" />
       <section>
-        <ReposTimeline />
+        <ReposTimeline profiles={ favorites } />
       </section>
     </main>
   );

@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import NavBar from '../components/NavBar';
 import ListOfFavorites from '../components/ListOfFavorites';
+import { verifyLogin } from '../helpers/verifyLogin';
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
-    const getUserFromLS = localStorage.getItem('githubSearchUser');
-    if (!getUserFromLS) { router.push('/'); }
+    verifyLogin(router);
     const getFavsFromLS = JSON.parse(localStorage.getItem('githubSearchFavs'));
     if (!getFavsFromLS) {
       localStorage.setItem('githubSearchFavs', JSON.stringify([]));

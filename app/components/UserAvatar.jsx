@@ -1,13 +1,13 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useGithubUserContext } from '../context/GithubUserContext';
+import { useCurrentSearch } from '../context/CurrentSearchContext';
 
 export default function ProfileAvatar({ width, height }) {
-  const { profile: { avatarUrl } } = useGithubUserContext();
+  const { currSearch: { avatarUrl } } = useCurrentSearch();
   return (
     <img
-      src={ avatarUrl.length && avatarUrl }
+      src={ avatarUrl }
       alt="Avatar profile"
       width={ width }
       height={ height }

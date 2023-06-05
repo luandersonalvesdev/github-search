@@ -2,14 +2,15 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useGithubUserContext } from '../context/GithubUserContext';
 
 export default function NavBarList() {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState();
+  const { user: { login } } = useGithubUserContext();
 
   useEffect(() => {
-    const getUserFromLS = localStorage.getItem('githubSearchUser');
-    setUser(getUserFromLS);
-  }, []);
+    setUser(login);
+  }, [login, user]);
   return (
     <ul>
       <li>
