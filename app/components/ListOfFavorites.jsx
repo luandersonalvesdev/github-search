@@ -1,15 +1,26 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import ProfileCard from './ProfileCard';
+import { useEffect, useState } from 'react';
+import ProfileCardFav from './ProfileCardFav';
+import { fetchUser } from '../service/customFetch';
 
 export default function ListOfFavorites({ favorites }) {
+  const [favs, setFavs] = useState([]);
+
+  useEffect(() => {
+    favorites.forEach(async (fav) => {
+      const dataFav = await fetchUser(fav);
+      setFavs((prev) => ([...prev, dataFav]));
+    });
+  }, []);
+
   return (
     <ul>
       {
-        favorites.map((fav) => (
-          <li key={ fav }>
-            <ProfileCard profile={ fav } />
+        favs.map((fav) => (
+          <li key={ fav.id }>
+            <ProfileCardFav profile={ fav } />
           </li>
         ))
       }
