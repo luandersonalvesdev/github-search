@@ -39,7 +39,8 @@ export default function ReposTimeline({ profiles }) {
           !allRepos.length
             ? (
               <span>
-                Sua linha do tempo está vazia, favorite algum usuário para preenche-la
+                Sua linha do tempo está vazia, favorite algum usuário
+                e recarregue a página para preenche-la
               </span>
             )
             : allRepos
