@@ -1,7 +1,16 @@
 'use client';
 
-export default function ProfileDetails() {
+import PropTypes from 'prop-types';
+import ButtonToFavorite from './ButtonToFavorite';
+
+export default function ProfileDetails({ username }) {
   return (
-    <span>profile details</span>
+    <div>
+      <ButtonToFavorite login={ username } />
+    </div>
   );
 }
+
+ProfileDetails.propTypes = {
+  username: PropTypes.shape({}).isRequired,
+};
