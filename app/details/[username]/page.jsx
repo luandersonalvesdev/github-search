@@ -17,7 +17,7 @@ export default function Details({ params: { username } }) {
   return (
     <main>
       <NavBar />
-      <ProfileDetails />
+      <ProfileDetails username={ username } />
       <ReposTimeline profiles={ [username] } />
     </main>
   );

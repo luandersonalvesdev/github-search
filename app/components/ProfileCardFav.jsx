@@ -25,7 +25,7 @@ export default function ProfileCardFav({ profile }) {
 ProfileCardFav.propTypes = {
   profile: PropTypes.shape({
     avatar_url: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
     login: PropTypes.string.isRequired,
   }).isRequired,
 };
