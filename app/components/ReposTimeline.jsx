@@ -4,13 +4,15 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { fetchRepo } from '../service/customFetch';
 import RepoCard from './RepoCard';
+import FilterRepoByName from './FilterRepoByName';
 
-const MAX_REPO_SHOWN = 12;
+const MAX_REPO_SHOWN = 15;
 const TEEN = 10;
 
 export default function ReposTimeline({ profiles }) {
   const [maxRepoShown, setMaxRepoShown] = useState(MAX_REPO_SHOWN);
   const [allRepos, setAllRepos] = useState([]);
+  const [nameFilter, setNameFilter] = useState('');
 
   useEffect(() => {
     profiles.forEach(async (fav) => {
@@ -26,14 +28,27 @@ export default function ReposTimeline({ profiles }) {
     return convert;
   };
 
-  const sortByDate = ({ props: { createdAt } }, { props: { createdAt: createdAt2 } }) => {
-    const convertCreated1 = convertToDate(createdAt);
-    const convertCreated2 = convertToDate(createdAt2);
+  const orderByDate = (
+    { props: { updatedAt } },
+    { props: { updatedAt: updatedAt2 } },
+  ) => {
+    const convertCreated1 = convertToDate(updatedAt);
+    const convertCreated2 = convertToDate(updatedAt2);
     return convertCreated2 - convertCreated1;
+  };
+
+  const filterByName = ({ props: { name } }) => {
+    return name.toLowerCase().includes(nameFilter.toLowerCase());
   };
 
   return (
     <>
+      <div>
+        <FilterRepoByName
+          nameFilter={ nameFilter }
+          setNameFilter={ setNameFilter }
+        />
+      </div>
       <ul>
         {
           !allRepos.length
@@ -59,8 +74,9 @@ export default function ReposTimeline({ profiles }) {
                   />
                 );
               })
-              .sort(sortByDate)
-              .filter((repo, ind) => ind < maxRepoShown)
+              .sort(orderByDate)
+              .filter(filterByName)
+              .filter((_, ind) => ind < maxRepoShown)
         }
       </ul>
       <button
