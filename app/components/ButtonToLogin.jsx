@@ -14,6 +14,17 @@ export default function ButtonToLogin() {
   };
 
   return (
-    <button onClick={ handleLogin }>Entrar</button>
+    <button
+      onClick={ handleLogin }
+      className="
+        bg-green-700
+        text-white
+        rounded py-1
+        min-w-full
+        hover:bg-green-800
+        duration-150"
+    >
+      Entrar
+    </button>
   );
 }
