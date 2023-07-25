@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { GithubUserContextProvider } from './context/GithubUserContext';
 import { CurrentSearchContextProvider } from './context/CurrentSearchContext';
+import './globals.css';
 
 export const metadata = {
   title: 'Github Search',
