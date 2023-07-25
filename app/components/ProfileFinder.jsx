@@ -28,16 +28,19 @@ export default function UserFinder({ goal }) {
 
   return (
     <div>
-      <div>
+      <div className="text-center mb-9">
         { isSearching && <p>Buscando...</p> }
         {
           sought
             && (itFound
               ? renderByGoal()
-              : <p>Usuário não encontrado.</p>)
+              : <p className="text-red-500">Usuário não encontrado</p>)
         }
       </div>
-      <form onSubmit={ (e) => e.preventDefault() }>
+      <form
+        onSubmit={ (e) => e.preventDefault() }
+        className="flex flex-col my-8 min-w-full"
+      >
         <InputText
           handleChange={ handleChange }
           inputSearch={ inputSearch }

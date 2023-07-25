@@ -12,6 +12,14 @@ export default function InputText({ handleChange, inputSearch, goal }) {
           ? 'Busque seu usuário github'
           : 'Busque um usuário github'
       }
+      className="
+        p-3
+        rounded
+        min-w-full
+        border-2
+        border-gray-100
+        focus:outline-none
+        focus:border-gray-200"
     />
   );
 }

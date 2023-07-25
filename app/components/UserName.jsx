@@ -4,5 +4,5 @@ import { useCurrentSearch } from '../context/CurrentSearchContext';
 
 export default function UsernameProfile() {
   const { currSearch: { login } } = useCurrentSearch();
-  return <p>{login}</p>;
+  return <p className="text-xl">{login}</p>;
 }

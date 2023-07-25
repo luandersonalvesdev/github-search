@@ -30,6 +30,17 @@ export default function ButtonSearch({
     <button
       onClick={ handleSearch }
       disabled={ !inputSearch.length }
+      className="
+        p-3
+        rounded
+        min-w-full
+        border-2
+        disabled:bg-gray-100
+        disabled:border-gray-200
+        disabled:opacity-30
+        bg-green-100
+        border-green-200
+        duration-300"
     >
       Buscar
     </button>
