@@ -36,12 +36,15 @@ export default function ButtonSearch({
         rounded-md
         min-w-full
         border-2
+        duration-300
         disabled:bg-gray-100
         disabled:border-gray-200
         disabled:opacity-30
         bg-emerald-100
         border-emerald-200
-        duration-300"
+        hover:bg-emerald-200
+        hover:border-emerald-300
+        "
     >
       Buscar
     </button>
