@@ -34,7 +34,7 @@ export default function UserFinder({ goal }) {
           sought
             && (itFound
               ? renderByGoal()
-              : <p className="text-red-500">Usuário não encontrado</p>)
+              : <p className="text-red-500 font-light">Usuário não encontrado</p>)
         }
       </div>
       <form

@@ -19,7 +19,8 @@ export default function ButtonToLogin() {
       className="
         bg-green-700
         text-white
-        rounded py-1
+        rounded-md
+        py-1
         min-w-full
         hover:bg-green-800
         duration-150"

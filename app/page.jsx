@@ -18,7 +18,6 @@ export default function Home() {
   return (
     <main
       className="
-        bg-neutral-100
         min-h-screen
         flex
         items-center

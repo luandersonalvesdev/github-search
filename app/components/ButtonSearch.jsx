@@ -32,14 +32,15 @@ export default function ButtonSearch({
       disabled={ !inputSearch.length }
       className="
         p-3
-        rounded
+        font-light
+        rounded-md
         min-w-full
         border-2
         disabled:bg-gray-100
         disabled:border-gray-200
         disabled:opacity-30
-        bg-green-100
-        border-green-200
+        bg-emerald-100
+        border-emerald-200
         duration-300"
     >
       Buscar
