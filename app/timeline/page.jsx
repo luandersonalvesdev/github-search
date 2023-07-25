@@ -22,10 +22,10 @@ export default function Timeline() {
   }, [router]);
 
   return (
-    <main>
+    <main className="flex flex-col items-center w-full h-screen">
       <NavBar />
-      <ProfileFinder goal="profile" />
-      <section>
+      <section className="flex flex-row-reverse items-start px-10 pt-16">
+        <ProfileFinder goal="profile" />
         <ReposTimeline profiles={ favorites } />
       </section>
     </main>

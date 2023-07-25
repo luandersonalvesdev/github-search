@@ -12,7 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className="bg-zinc-50 dark:bg-zinc-900 relative duration-200">
+      <body
+        className="
+        relative
+        duration-200
+        w-screen
+        flex
+        justify-center
+        bg-zinc-50
+        dark:bg-zinc-900
+        "
+      >
         <DarkTheme />
         <GithubUserContextProvider>
           <CurrentSearchContextProvider>

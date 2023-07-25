@@ -12,15 +12,15 @@ export default function NavBarList() {
     setUser(login);
   }, [login, user]);
   return (
-    <ul>
+    <ul className="flex justify-evenly w-1/2 font-light text-lg">
       <li>
-        <Link href="/timeline">Página inicial</Link>
+        <Link href="/timeline" className="p-2">Página inicial</Link>
       </li>
       <li>
-        <Link href="/favorites">Favoritos</Link>
+        <Link href="/favorites" className="p-2">Favoritos</Link>
       </li>
       <li>
-        <Link href={ `/details/${user}` }>Perfil</Link>
+        <Link href={ `/details/${user}` } className="p-2">Perfil</Link>
       </li>
     </ul>
   );

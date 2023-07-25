@@ -16,5 +16,23 @@ export default function ButtonLogout() {
     router.push('/');
   };
 
-  return <button onClick={ handleLogout }>Sair</button>;
+  return (
+    <button
+      className="
+        mr-16 py-2
+        px-4
+        border
+        rounded-md
+        font-light
+        duration-200
+        bg-rose-50
+        border-rose-200
+        hover:bg-rose-100
+        hover:border-rose-300
+        "
+      onClick={ handleLogout }
+    >
+      Sair
+    </button>
+  );
 }
