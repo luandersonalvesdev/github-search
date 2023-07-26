@@ -41,7 +41,7 @@ export default function UserFinder({ goal }) {
       </div>
       <form
         onSubmit={ (e) => e.preventDefault() }
-        className="flex flex-col my-8 min-w-full text-center"
+        className="flex flex-col min-w-full text-center"
       >
         {
           goal !== 'user'

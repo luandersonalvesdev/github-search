@@ -8,7 +8,7 @@ export default function ProfileCard() {
   const { currSearch: { avatarUrl, login, name } } = useCurrentSearch();
 
   return (
-    <div className="relative">
+    <div className="pt-5 relative">
       <Link
         href={ `/details/${login}` }
         className="

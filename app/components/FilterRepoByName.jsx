@@ -8,7 +8,7 @@ export default function FilterRepoByName({ nameFilter, setNameFilter }) {
   return (
     <input
       type="text"
-      placeholder="pesquise pelo nome"
+      placeholder="Filtre pelo nome"
       value={ nameFilter }
       onChange={ handleChange }
     />

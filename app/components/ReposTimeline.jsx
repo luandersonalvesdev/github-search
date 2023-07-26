@@ -42,51 +42,59 @@ export default function ReposTimeline({ profiles }) {
   };
 
   return (
-    <>
-      <div>
-        <FilterRepoByName
-          nameFilter={ nameFilter }
-          setNameFilter={ setNameFilter }
-        />
-      </div>
-      <ul>
-        {
-          !allRepos.length
-            ? (
-              <span>
+    <div
+      className="h-full flex flex-col text-left justify-center w-full"
+    >
+      {
+        !allRepos.length
+          ? (
+            <span className="text-5xl opacity-25">
+              <em>
                 Sua linha do tempo está vazia, favorite algum usuário
-                e recarregue a página para preenche-la
-              </span>
-            )
-            : allRepos
-              .map((repo) => {
-                return (
-                  <RepoCard
-                    key={ repo.id }
-                    name={ repo.name }
-                    login={ repo.owner.login }
-                    avatarUrl={ repo.owner.avatar_url }
-                    forks={ repo.forks }
-                    stargazersCount={ repo.stargazers_count }
-                    createdAt={ repo.created_at }
-                    updatedAt={ repo.updated_at }
-                    htmlUrl={ repo.html_url }
-                  />
-                );
-              })
-              .sort(orderByDate)
-              .filter(filterByName)
-              .filter((_, ind) => ind < maxRepoShown)
-        }
-      </ul>
-      <button
-        disabled={ maxRepoShown >= allRepos.length }
-        onClick={ handleLoadMore }
-      >
-        Ver mais
+                e recarregue a página para preenchê-la
+              </em>
+            </span>
+          )
+          : (
+            <div className="flex flex-col border">
+              <FilterRepoByName
+                nameFilter={ nameFilter }
+                setNameFilter={ setNameFilter }
+              />
+              <ul>
+                {
+                  allRepos
+                    .map((repo) => {
+                      return (
+                        <RepoCard
+                          key={ repo.id }
+                          name={ repo.name }
+                          login={ repo.owner.login }
+                          avatarUrl={ repo.owner.avatar_url }
+                          forks={ repo.forks }
+                          stargazersCount={ repo.stargazers_count }
+                          createdAt={ repo.created_at }
+                          updatedAt={ repo.updated_at }
+                          htmlUrl={ repo.html_url }
+                        />
+                      );
+                    })
+                    .sort(orderByDate)
+                    .filter(filterByName)
+                    .filter((_, ind) => ind < maxRepoShown)
+                }
+              </ul>
+              <button
+                disabled={ maxRepoShown >= allRepos.length }
+                onClick={ handleLoadMore }
+              >
+                Ver mais
 
-      </button>
-    </>
+              </button>
+            </div>
+          )
+      }
+    </div>
   );
 }
 

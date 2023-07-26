@@ -32,7 +32,7 @@ export default function ButtonToFavorite({ login }) {
   return (
     <button
       onClick={ isFavorite ? handleDisfavor : handleFavorite }
-      className="absolute top-2 right-2"
+      className="absolute top-6 right-1"
     >
       <FontAwesomeIcon
         icon={

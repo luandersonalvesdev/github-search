@@ -24,7 +24,18 @@ export default function Timeline() {
   return (
     <main className="flex flex-col items-center w-full h-screen">
       <NavBar />
-      <section className="flex flex-row-reverse items-start px-10 pt-16">
+      <section
+        className="
+          flex
+          flex-row-reverse
+          items-start
+          px-10
+          pt-24
+          space-x-4
+          w-11/12
+          border
+          "
+      >
         <ProfileFinder goal="profile" />
         <ReposTimeline profiles={ favorites } />
       </section>
