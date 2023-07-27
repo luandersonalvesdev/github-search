@@ -38,7 +38,11 @@ export default function ProfileCard() {
             pl-4
             "
         >
-          <p>{name}</p>
+          <p>
+            <strong>
+              {name}
+            </strong>
+          </p>
           <p className="font-light">{login}</p>
         </div>
       </Link>

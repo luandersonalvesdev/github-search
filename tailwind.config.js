@@ -6,7 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'serif'],
+      sans: ['Abel', 'serif'],
+      AdventPro: ['Advent Pro', 'serif'],
     },
     extend: {},
   },
