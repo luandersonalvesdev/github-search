@@ -8,9 +8,14 @@ export default function NavBarUser() {
 
   return (
     <div>
-      <Link href={ `/details/${login}` }>
-        <img width="100px" src={ avatarUrl } alt="" />
-        <p>{login}</p>
+      <Link href={ `/details/${login}` } className="flex items-center">
+        <img
+          width="60px"
+          src={ avatarUrl }
+          alt=""
+          className="rounded-md"
+        />
+        <p className="ml-3 font-light">{login}</p>
       </Link>
     </div>
   );

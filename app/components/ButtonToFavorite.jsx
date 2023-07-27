@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 
 export default function ButtonToFavorite({ login }) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -29,8 +32,16 @@ export default function ButtonToFavorite({ login }) {
   return (
     <button
       onClick={ isFavorite ? handleDisfavor : handleFavorite }
+      className="absolute top-6 right-1"
     >
-      {isFavorite ? 'desfavoritar' : 'favoritar'}
+      <FontAwesomeIcon
+        icon={
+          isFavorite
+            ? faHeartSolid
+            : faHeart
+        }
+        className="w-5 h-5 text-red-400 duration-200 hover:scale-110"
+      />
     </button>
   );
 }

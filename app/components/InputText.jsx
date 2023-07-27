@@ -14,9 +14,13 @@ export default function InputText({ handleChange, inputSearch, goal }) {
       }
       className="
         p-3
-        rounded
+        mb-2
+        font-light
+        text-center
+        rounded-md
         min-w-full
         border-2
+        bg-gray-100
         border-gray-100
         focus:outline-none
         focus:border-gray-200"

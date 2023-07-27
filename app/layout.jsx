@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { GithubUserContextProvider } from './context/GithubUserContext';
 import { CurrentSearchContextProvider } from './context/CurrentSearchContext';
+import DarkTheme from './components/DarkTheme';
 import './globals.css';
 
 export const metadata = {
@@ -10,8 +11,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="pt-br">
+      <body
+        className="
+        relative
+        duration-200
+        w-screen
+        flex
+        justify-center
+        bg-zinc-50
+        dark:bg-zinc-900
+        "
+      >
+        <DarkTheme />
         <GithubUserContextProvider>
           <CurrentSearchContextProvider>
             {children}

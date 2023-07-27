@@ -27,20 +27,31 @@ export default function UserFinder({ goal }) {
   };
 
   return (
-    <div>
+    <div
+      className={ goal !== 'user' && 'flex flex-col-reverse' }
+    >
       <div className="text-center mb-9">
         { isSearching && <p>Buscando...</p> }
         {
           sought
             && (itFound
               ? renderByGoal()
-              : <p className="text-red-500">Usuário não encontrado</p>)
+              : <p className="text-red-500 font-light">Usuário não encontrado</p>)
         }
       </div>
       <form
         onSubmit={ (e) => e.preventDefault() }
-        className="flex flex-col my-8 min-w-full"
+        className="flex flex-col min-w-full text-center"
       >
+        {
+          goal !== 'user'
+            && (
+              <h2 className="font-light text-3xl pb-3">
+                Pesquisar
+              </h2>
+            )
+        }
+
         <InputText
           handleChange={ handleChange }
           inputSearch={ inputSearch }

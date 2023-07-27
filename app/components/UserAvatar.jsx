@@ -11,7 +11,7 @@ export default function ProfileAvatar({ width, height }) {
       alt="Avatar profile"
       width={ width }
       height={ height }
-      className="rounded-lg my-5"
+      className="rounded-lg mb-3"
     />
   );
 }

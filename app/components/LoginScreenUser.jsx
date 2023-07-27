@@ -3,10 +3,10 @@ import UserName from './UserName';
 
 export default function LoginScreenProfile() {
   return (
-    <div className="text-center my-3 flex flex-col items-center">
+    <div className="text-center mb-4 flex flex-col items-center">
       <UserAvatar
-        width="125px"
-        height="125px"
+        width="135px"
+        height="135px"
       />
       <UserName />
     </div>
