@@ -33,7 +33,6 @@ export default function Timeline() {
           pt-24
           space-x-4
           w-11/12
-          border
           "
       >
         <ProfileFinder goal="profile" />
