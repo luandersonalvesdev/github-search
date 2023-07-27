@@ -9,21 +9,22 @@ export default function InputText({ handleChange, inputSearch, goal }) {
       onChange={ handleChange }
       placeholder={
         goal === 'user'
-          ? 'Busque seu usuário github'
+          ? 'Seu usuário github'
           : 'Busque um usuário github'
       }
       className="
-        p-3
-        mb-2
+        p-2
         font-light
         text-center
         rounded-md
-        min-w-full
+        w-full
         border-2
         bg-gray-100
         border-gray-100
         focus:outline-none
-        focus:border-gray-200"
+        focus:border-gray-200
+        h-full
+        "
     />
   );
 }

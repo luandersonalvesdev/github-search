@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { fetchUser } from '../service/customFetch';
 
 import { initialCurrSearchState } from '../context/CurrentSearchContext';
@@ -31,10 +33,9 @@ export default function ButtonSearch({
       onClick={ handleSearch }
       disabled={ !inputSearch.length }
       className="
-        p-3
+        p-2
         font-light
         rounded-md
-        min-w-full
         border-2
         duration-300
         disabled:bg-gray-100
@@ -46,7 +47,7 @@ export default function ButtonSearch({
         hover:border-emerald-300
         "
     >
-      Buscar
+      <FontAwesomeIcon className="w-7" icon={ faMagnifyingGlass } />
     </button>
   );
 }
