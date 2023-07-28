@@ -29,11 +29,13 @@ export default function Timeline() {
           flex
           flex-row
           items-start
+          justify-center
           px-10
           pt-24
           space-x-4
           w-11/12
           border
+          border-red-500
           "
       >
         <ProfileFinder goal="profile" />

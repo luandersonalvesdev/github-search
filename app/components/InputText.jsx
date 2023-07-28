@@ -13,7 +13,7 @@ export default function InputText({ handleChange, inputSearch, goal }) {
           : 'Busque um usuário github'
       }
       className="
-        p-2
+        p-3
         font-light
         text-center
         rounded-md

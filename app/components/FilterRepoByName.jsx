@@ -13,11 +13,10 @@ export default function FilterRepoByName({ nameFilter, setNameFilter }) {
       onChange={ handleChange }
       className="
       p-3
-      mb-2
+      mb-4
       font-light
       text-center
       rounded-md
-      min-w-full
       border-2
       bg-gray-100
       border-gray-100

@@ -27,10 +27,11 @@ export default function RepoCard({
         inline-block
         px-4
         py-3
+        mr-4
+        mb-4
         rounded-md
         hover:shadow-lg
         duration-200
-        ml-5
         relative
         "
       >
