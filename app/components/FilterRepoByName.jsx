@@ -14,6 +14,7 @@ export default function FilterRepoByName({ nameFilter, setNameFilter }) {
       className="
       p-3
       mb-4
+      w-full
       font-light
       text-center
       rounded-md

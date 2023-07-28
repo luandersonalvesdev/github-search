@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         justify-center
         bg-zinc-50
         dark:bg-zinc-900
+        mb-12
         "
       >
         {/* <DarkTheme /> */}

@@ -34,18 +34,18 @@ export default function UserFinder({ goal }) {
           : 'flex w-full flex-col'
       }
     >
-      <div className="text-center mb-11">
-        { isSearching && <p>Buscando...</p> }
+      <div className="text-center">
+        { isSearching && <p className="mb-6">Buscando...</p> }
         {
           sought
             && (itFound
               ? renderByGoal()
-              : <p className="text-red-500 font-light">Usuário não encontrado</p>)
+              : <p className="text-red-500 font-light mb-6">Usuário não encontrado</p>)
         }
       </div>
       <form
         onSubmit={ (e) => e.preventDefault() }
-        className="flex justify-center text-center w-full space-x-1"
+        className="flex justify-center text-center w-60 space-x-1"
       >
         <InputText
           handleChange={ handleChange }

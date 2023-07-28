@@ -19,6 +19,7 @@ export default function ProfileCard() {
           border
           hover:shadow-md
           duration-200
+          mb-6
         "
       >
         <img
