@@ -43,7 +43,7 @@ export default function ReposTimeline({ profiles }) {
 
   return (
     <div
-      className="pr-24 flex flex-col text-left justify-center w-full"
+      className="flex flex-col text-left justify-center border"
     >
       {
         !allRepos.length
@@ -56,14 +56,14 @@ export default function ReposTimeline({ profiles }) {
             </span>
           )
           : (
-            <div className="flex flex-col  w-full">
+            <div className="flex flex-col">
               <div>
                 <FilterRepoByName
                   nameFilter={ nameFilter }
                   setNameFilter={ setNameFilter }
                 />
               </div>
-              <ul className="w-full space-y-4 flex flex-wrap items-center">
+              <ul className="flex flex-wrap items-center">
                 {
                   allRepos
                     .map((repo) => {

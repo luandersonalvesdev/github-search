@@ -30,7 +30,7 @@ export default function UserFinder({ goal }) {
     <div
       className={
         goal !== 'user'
-          ? 'flex flex-col-reverse'
+          ? 'flex flex-col'
           : 'flex w-full flex-col'
       }
     >
@@ -47,15 +47,6 @@ export default function UserFinder({ goal }) {
         onSubmit={ (e) => e.preventDefault() }
         className="flex justify-center text-center w-full space-x-1"
       >
-        {
-          goal !== 'user'
-            && (
-              <h2 className="font-light text-3xl pb-3">
-                Pesquisar
-              </h2>
-            )
-        }
-
         <InputText
           handleChange={ handleChange }
           inputSearch={ inputSearch }
