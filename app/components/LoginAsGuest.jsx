@@ -10,7 +10,7 @@ export default function LoginAsGuest() {
     router.push('/timeline');
   };
   return (
-    <div className="flex flex-col mt-14">
+    <div className="flex flex-col mt-32">
       <p className="text-gray-500 mb-3 font-light">Não tem uma conta no github?</p>
       <button
         onClick={ handleLoginGuest }

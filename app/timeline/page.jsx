@@ -22,17 +22,18 @@ export default function Timeline() {
   }, [router]);
 
   return (
-    <main className="flex flex-col items-center w-full h-screen">
+    <main className="flex flex-col items-center w-full">
       <NavBar />
       <section
         className="
           flex
-          flex-row-reverse
+          flex-row
           items-start
           px-10
           pt-24
           space-x-4
           w-11/12
+          border
           "
       >
         <ProfileFinder goal="profile" />

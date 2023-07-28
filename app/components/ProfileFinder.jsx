@@ -28,9 +28,13 @@ export default function UserFinder({ goal }) {
 
   return (
     <div
-      className={ goal !== 'user' && 'flex flex-col-reverse' }
+      className={
+        goal !== 'user'
+          ? 'flex flex-col-reverse'
+          : 'flex w-full flex-col'
+      }
     >
-      <div className="text-center mb-9">
+      <div className="text-center mb-11">
         { isSearching && <p>Buscando...</p> }
         {
           sought
@@ -41,7 +45,7 @@ export default function UserFinder({ goal }) {
       </div>
       <form
         onSubmit={ (e) => e.preventDefault() }
-        className="flex flex-col min-w-full text-center"
+        className="flex justify-center text-center w-full space-x-1"
       >
         {
           goal !== 'user'

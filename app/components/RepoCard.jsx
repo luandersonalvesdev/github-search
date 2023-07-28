@@ -42,12 +42,12 @@ export default function RepoCard({
         </p>
         <br />
         <CreateRepoSvg />
-        <p className="inline">
+        <p className="inline opacity-30">
           {convertDate(createdAt)}
         </p>
         <br />
         <UpdateRepoSvg />
-        <p className="inline ml-1">
+        <p className="inline ml-1 opacity-30">
           {convertDate(updatedAt)}
         </p>
         <StarSvg />
