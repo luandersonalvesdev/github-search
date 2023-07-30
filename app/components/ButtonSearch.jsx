@@ -36,18 +36,18 @@ export default function ButtonSearch({
         p-2
         font-light
         rounded-md
-        border-2
+        border
         duration-300
+        disabled:opacity-30
         disabled:bg-gray-100
         disabled:border-gray-200
-        disabled:opacity-30
         bg-emerald-100
         border-emerald-200
         hover:bg-emerald-200
         hover:border-emerald-300
         "
     >
-      <FontAwesomeIcon className="w-7" icon={ faMagnifyingGlass } />
+      <FontAwesomeIcon className="w-8" icon={ faMagnifyingGlass } />
     </button>
   );
 }

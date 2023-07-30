@@ -32,10 +32,8 @@ export default function Timeline() {
           justify-center
           px-10
           pt-24
-          space-x-4
+          space-x-10
           w-11/12
-          border
-          border-red-500
           "
       >
         <ProfileFinder goal="profile" />

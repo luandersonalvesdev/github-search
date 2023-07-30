@@ -43,7 +43,7 @@ export default function ReposTimeline({ profiles }) {
 
   return (
     <div
-      className="flex flex-col text-left justify-center border"
+      className="flex flex-col text-left justify-center"
     >
       {
         !allRepos.length
@@ -87,6 +87,18 @@ export default function ReposTimeline({ profiles }) {
                 }
               </ul>
               <button
+                className="
+                  rounded-md
+                  w-24
+                  p-3
+                  border
+                  bg-amber-100
+                  border-amber-300
+                  hover:bg-amber-200
+                  hover:border-amber-300
+                  duration-200
+                  self-center
+                "
                 disabled={ maxRepoShown >= allRepos.length }
                 onClick={ handleLoadMore }
               >
