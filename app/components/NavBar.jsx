@@ -12,6 +12,7 @@ export default function NavBar() {
         items-center
         px-8
         py-2
+        mb-16
         bg-white
         shadow-md
         "

@@ -6,7 +6,7 @@ import { fetchRepo } from '../service/customFetch';
 import RepoCard from './RepoCard';
 import FilterRepoByName from './FilterRepoByName';
 
-const MAX_REPO_SHOWN = 25;
+const MAX_REPO_SHOWN = 20;
 const TEEN = 10;
 
 export default function ReposTimeline({ profiles }) {
@@ -43,7 +43,7 @@ export default function ReposTimeline({ profiles }) {
 
   return (
     <div
-      className="flex flex-col text-left justify-center"
+      className="flex flex-col text-left justify-center w-full"
     >
       {
         !allRepos.length
@@ -56,7 +56,7 @@ export default function ReposTimeline({ profiles }) {
             </span>
           )
           : (
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
               <div>
                 <FilterRepoByName
                   nameFilter={ nameFilter }
@@ -89,8 +89,8 @@ export default function ReposTimeline({ profiles }) {
               <button
                 className="
                   rounded-md
-                  w-24
-                  p-3
+                  px-3
+                  py-3
                   border
                   bg-amber-100
                   border-amber-300

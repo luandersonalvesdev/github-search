@@ -30,7 +30,7 @@ export default function RepoCard({
         mr-4
         mb-4
         rounded-md
-        hover:shadow-lg
+        hover:shadow-md
         duration-200
         relative
         "
