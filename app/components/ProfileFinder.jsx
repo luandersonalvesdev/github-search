@@ -30,11 +30,11 @@ export default function UserFinder({ goal }) {
     <div
       className={
         goal !== 'user'
-          ? 'flex flex-col'
+          ? 'flex flex-col items-center'
           : 'flex w-full flex-col'
       }
     >
-      <div className="text-center">
+      <div className="text-center w-full">
         { isSearching && <p className="mb-6">Buscando...</p> }
         {
           sought
@@ -45,7 +45,7 @@ export default function UserFinder({ goal }) {
       </div>
       <form
         onSubmit={ (e) => e.preventDefault() }
-        className="flex justify-center text-center w-60 space-x-1"
+        className="flex justify-center text-center space-x-1 w-60"
       >
         <InputText
           handleChange={ handleChange }

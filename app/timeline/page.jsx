@@ -31,7 +31,6 @@ export default function Timeline() {
           items-start
           justify-center
           px-10
-          pt-24
           space-x-10
           w-11/12
           "
