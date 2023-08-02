@@ -21,11 +21,15 @@ export default function Favorites() {
   }, [router]);
 
   return (
-    <main>
+    <main className="flex flex-col items-center w-full">
       <NavBar />
       {
         !favorites.length
-          ? <p>Você ainda não tem usuários favoritados.</p>
+          ? (
+            <p className="text-5xl opacity-25">
+              Você ainda não tem usuários favoritados.
+            </p>
+          )
           : (
             <div>
               <p>Todos os seus favoritos:</p>
